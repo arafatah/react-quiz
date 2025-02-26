@@ -21,6 +21,7 @@ function reducer(state, action) {
     default:
       throw new Error("unknown action");
   }
+  
   // return state + action;
   // if (action.type === "inc") return state + 1;
   // if (action.type === "dec") return state - 1;
