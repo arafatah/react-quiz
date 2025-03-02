@@ -12,7 +12,7 @@ const initialState = {
   questions: [],
 
   // 'loading', 'error', 'ready', 'active', 'finished'
-  status: "loading",
+  status: "loading", 
 
   index: 0,
   answer: null,
