@@ -7,12 +7,13 @@ import StartScreen from "./StartScreen";
 import Question from "./Question";
 import NextButton from "./NextButton";
 import Progress from "./Progress";
+import FinishedScreen from "./FinishedScreen";
 
 const initialState = {
   questions: [],
 
   // 'loading', 'error', 'ready', 'active', 'finished'
-  status: "loading", 
+  status: "loading",
 
   index: 0,
   answer: null,
@@ -101,6 +102,12 @@ export default function App() {
               />
               <NextButton dispatch={dispatch} answer={answer} />
             </>
+          )}
+          {status === "finished" && (
+            <FinishedScreen
+              maxPossiblePoints={maxPossiblePoints}
+              points={points}
+            />
           )}
         </Main>
       </div>
