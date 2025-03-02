@@ -59,16 +59,20 @@ function reducer(state, action) {
         highscore:
           state.points > state.highscore ? state.points : state.highscore,
       };
+    case "restart":
+      return {
+        ...initialState,
+        questions: state.questions,
+        status: "ready",
+      };
     default:
       throw new Error("Action unknown");
   }
 }
 
 export default function App() {
-  const [{ questions, status, index, answer, points, highscore }, dispatch] = useReducer(
-    reducer,
-    initialState
-  );
+  const [{ questions, status, index, answer, points, highscore }, dispatch] =
+    useReducer(reducer, initialState);
 
   const numbQuestions = questions.length;
   const maxPossiblePoints = questions.reduce(
@@ -121,6 +125,7 @@ export default function App() {
               maxPossiblePoints={maxPossiblePoints}
               points={points}
               highscore={highscore}
+              dispatch={dispatch}
             />
           )}
         </Main>

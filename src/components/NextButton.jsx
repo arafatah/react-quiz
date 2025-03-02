@@ -20,6 +20,8 @@ function NextButton({ dispatch, answer, index, numbQuestions }) {
         Finish
       </button>
     );
+
+  
 }
 
 export default NextButton;
