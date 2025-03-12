@@ -3,7 +3,7 @@ import { useReducer, useState } from "react";
 const initialState = { count: 0, step: 1 };
 
 function reducer(state, action) {
-  console.log(state, action);
+  // console.log(state, action);
   // return { count: 0, step: 1 };
 
   switch (action.type) {
